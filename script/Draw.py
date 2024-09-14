@@ -3,7 +3,7 @@
 from pyecharts.charts import Bar,Line
 from pyecharts import options as opts
 from pyecharts.globals import CurrentConfig
-from nmonAnalyze.Parse import Parse
+from script.Parse import Parse
 
 echarts_js_path = "../html/js/echarts.min.js"
 CurrentConfig.ONLINE_HOST = '../html/js/'
