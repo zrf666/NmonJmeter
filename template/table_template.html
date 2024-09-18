@@ -1,31 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fixed Height Scrollable Table</title>
-  <!-- 引入 Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  
-  <style>
-    /* 设置表格容器的固定高度并启用滚动 */
-    .table-wrapper {
-      height: 300px; /* 固定高度 */
-      overflow-y: auto; /* 启用垂直滚动 */
-      border: 1px solid #dee2e6; /* 表格边框 */
-    }
-    /* 让表格表头固定在顶部 */
-    .table thead th {
-      position: sticky;
-      top: 0;
-      background-color: rgb(156, 142, 142);
-      z-index: 1;
-    }
-  </style>
-</head>
-<body>
-
-<div class="container mt-5">
+<div class="mt-1 mb-3 ms-3">
   <h2>Fixed Height Scrollable Table</h2>
 
   <div class="table-wrapper">
@@ -51,9 +24,3 @@
   </div>
 </div>
 
-<!-- 引入 Bootstrap JS 和 jQuery -->
-<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-</body>
-</html>
