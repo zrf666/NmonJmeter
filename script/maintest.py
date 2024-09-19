@@ -24,13 +24,19 @@ if __name__ == '__main__':
     data = {'sqmpleD' : ip_dict}
     env = Environment(loader=FileSystemLoader('../template'))
     # 获取模板文件对象
-    template = env.get_template('layout2.html')
-    rendered_html = template.render(datas=data)
-    with open(f"../output/test.html", 'w', encoding="utf-8") as f:
-        f.write(rendered_html)
+    # template = env.get_template('layout2.html')
+    # rendered_html = template.render(datas=data)
+    # with open(f"../output/test.html", 'w', encoding="utf-8") as f:
+    #     f.write(rendered_html)
 
     a, b = d.draw_DISKSIZE()
     template = env.get_template('layout.html')
     rendered_html = template.render(chart=a, table=b)
     with open(f"../output/test2.html", 'w', encoding="utf-8") as f:
+        f.write(rendered_html)
+
+    a, b = d.draw_BBBP()
+    template = env.get_template('layout.html')
+    rendered_html = template.render(chart=a, table=b)
+    with open(f"../output/AAAA.html", 'w', encoding="utf-8") as f:
         f.write(rendered_html)

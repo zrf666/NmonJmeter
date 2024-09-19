@@ -93,6 +93,23 @@ class Draw(object):
         table_html = self.draw_common_table(datas)
         return echarts_html, table_html
 
+    def draw_AAAA(self):
+        title = "AAAA"
+        datas = self.parse.get_AAA()
+        echarts_html = ""
+        for data in datas:
+            echarts_html += f"<div>{data}</div>\n"
+        table_html = ""
+        return echarts_html, table_html
+
+    def draw_BBBP(self):
+        title = "BBBP"
+        datas = self.parse.get_BBBP()
+        echarts_html = ""
+        for data in datas:
+            echarts_html += f"<div>{data}</div>\n"
+        table_html = ""
+        return echarts_html, table_html
 
     def draw_CPU_ALL(self):
         title = "CPU_ALL"
@@ -105,6 +122,9 @@ class Draw(object):
         datas = self.parse.get_CPU_SUMM()
         # return self.draw_common_line(datas, title)
         return self.draw_common_stack_bar(datas, title, 3)
+
+    def draw_CPU_XXX(self):
+        pass
 
     def draw_DISKSIZE(self):
         title = "DISKSIZE"

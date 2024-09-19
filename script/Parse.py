@@ -83,13 +83,12 @@ class Parse(object):
 
     def get_AAA(self):
         AAA = []
-        with open(self.file, 'r') as f:
-            for line in f:
-                if line.startswith('AAA'):
-                    _, A1, A2,_ = line.split(',')
-                    AAA.append(f"{A1}: {A2}")
-                if not line.startswith('AAA'):
-                    break
+        for line in self.lines:
+            if line.startswith('AAA'):
+                A = line.split(',')
+                AAA.append(f"{A}")
+            if not line.startswith('AAA'):
+                break
         print(AAA)
         return AAA
 
