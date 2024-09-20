@@ -15,6 +15,8 @@ def draw_main():
     for name in names:
         file_path = os.path.join(conf.nmon_file_dir, name)
         prefix_name = name.replace('.nmon', '')
+        prefix_name = prefix_name.replace('.', '-')
+        prefix_name = prefix_name.replace('_', '-')
         d = Draw(prefix_name, file_path)
         chart_datas[prefix_name] = d.draw_all_in_any_file()
     env = Environment(loader=FileSystemLoader('../template'))
