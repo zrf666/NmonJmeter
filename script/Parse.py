@@ -89,7 +89,6 @@ class Parse(object):
                 AAA.append(f"{A}")
             if not line.startswith('AAA'):
                 break
-        print(AAA)
         return AAA
 
 
@@ -100,8 +99,6 @@ class Parse(object):
                 BBBP_DATA.append(line.replace('\n', '').split(',')[2:])
             if line.startswith('ZZZZ,'):
                 break
-        for data in BBBP_DATA:
-            print(data)
         return BBBP_DATA
 
     def get_cpus(self):
@@ -186,17 +183,8 @@ class Parse(object):
             return cpu_xxx_data
 
 
-    def get_CPU_XXX(self):
-        for line in self.lines:
-            if line.startswith('AAA,cpus,'):
-                cpus = int(line.replace('\n', '').split(',')[-1])
-                break
-        cpu_xxx = []
-        for num in range(1, cpus+1):
-            cpu_xxx.append(f"CPU{num:03d}")
-        print(cpu_xxx)
-        for cpu in cpu_xxx:
-            self.get_data(cpu)
+    def get_CPU_XXX(self, cpu_xxx):
+        return self.get_data_dict(cpu_xxx)
 
 
     def get_DISK_SUMM(self, type='dict'):

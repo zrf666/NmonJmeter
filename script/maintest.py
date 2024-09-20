@@ -15,28 +15,28 @@ if __name__ == '__main__':
     # a,b = draw_DISKSIZE(disk_busy)
     # b = draw_table(disk_busy, 'disk_busy.html')
 
-    d = Draw()
+    d = Draw('186.1.1.1')
     # a, b = d.draw_DISKSUMM(sys_summ)
     # a, b = d.draw_SYS_SUMM()
     # a, b = d.draw_CPU_SUMM()
     # a, b = d.draw_CPU_ALL()
-    ip_dict = d.draw_all()
+    ip_dict = d.draw_all_in_one_file()
     data = {'sqmpleD' : ip_dict}
     env = Environment(loader=FileSystemLoader('../template'))
     # 获取模板文件对象
-    # template = env.get_template('layout2.html')
-    # rendered_html = template.render(datas=data)
+    template = env.get_template('layout_one.html')
+    rendered_html = template.render(datas=data)
+    with open(f"../output/all.html", 'w', encoding="utf-8") as f:
+        f.write(rendered_html)
+
+    # a, b = d.draw_DISKSIZE()
+    # template = env.get_template('layout_test.html')
+    # rendered_html = template.render(chart=a, table=b)
+    # with open(f"../output/test2.html", 'w', encoding="utf-8") as f:
+    #     f.write(rendered_html)
+    #
+    # a, b = d.draw_VM()
+    # template = env.get_template('layout_test.html')
+    # rendered_html = template.render(chart=a, table=b)
     # with open(f"../output/test.html", 'w', encoding="utf-8") as f:
     #     f.write(rendered_html)
-
-    a, b = d.draw_DISKSIZE()
-    template = env.get_template('layout.html')
-    rendered_html = template.render(chart=a, table=b)
-    with open(f"../output/test2.html", 'w', encoding="utf-8") as f:
-        f.write(rendered_html)
-
-    a, b = d.draw_BBBP()
-    template = env.get_template('layout.html')
-    rendered_html = template.render(chart=a, table=b)
-    with open(f"../output/AAAA.html", 'w', encoding="utf-8") as f:
-        f.write(rendered_html)
